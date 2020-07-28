@@ -21,11 +21,11 @@ Contents
 >e.g.
 >auto enp1s0
 >iface enp1s0 inet static
->   address 10.144.54.133
->   network 192.168.4.0
->   netmask 255.255.252.0
->   gateway 10.144.55.254
->   broadcast 192.168.4.255
+>   address 10.144.54.133 
+>   network 192.168.4.0 
+>   netmask 255.255.252.0 
+>   gateway 10.144.55.254 
+>   broadcast 192.168.4.255 
 
 
 e.g.:

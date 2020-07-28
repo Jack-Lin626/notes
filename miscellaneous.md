@@ -27,6 +27,6 @@ Contents
 >&emsp;&emsp; gateway 10.144.55.254    
 >&emsp;&emsp; broadcast 192.168.4.255    
 
-
-e.g.:
-
+3. bring the internet up
+ -- `inconfig [name] up`
+ -- `ip linkset [name] up/down`

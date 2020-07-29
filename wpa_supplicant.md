@@ -16,9 +16,12 @@ WiFi stands for *Wireless Fidelity*, which means how accurate the signal is. The
  - How much data can the signal send?
  - Is it backwards compatible with other standards?  
 
-In the world of Wireless communication, we need a standard to regulate and unify how to communicate. Similar to power outlet, we need to have a consensus about it so that we can plug in different kinds of electrical appliances. Therefore, **IEEE 802.1X** becomes the standard protocol when it comes to WiFi.
+In the world of Wireless communication, we need a standard to regulate and unify how to communicate. Similar to power outlet, companies need to have a consensus about it so that we can plug in different kinds of electrical appliances. Therefore, **IEEE 802.1X** becomes the standard protocol when it comes to WiFi.
 
-After we get the big pic of Wifi and its jargon, let's dive into *wpa_supplicant*.
+After we get the big pic of Wifi and its jargon, let's dive into *wpa_supplicant*. It can be considered as a cient edge when we wnat to connect an Access point(AP). Moreover, wpa_supplicant implements key negotiation with a WPA Authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wlan driver.
+
+Usually, wpa_supplicant works likely as a daemon program, and runs in the background continuously. Due to this characteristic, it has its own PID. It is crucial to kill the old PID when we want to launch a new one. Basically,using `pa aux | grep wpa && kill [PID]`.
+
 ***********
 Terminology
 -----------

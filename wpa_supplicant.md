@@ -18,12 +18,12 @@ WiFi stands for *Wireless Fidelity*, which means how accurate the signal is. The
 
 In the world of Wireless communication, we need a standard to regulate and unify how to communicate. Similar to power outlet, we need to have a consensus about it so that we can plug in different kinds of electrical appliances. Therefore, **IEEE 802.1X** becomes the standard protocol when it comes to WiFi.
 
-
+After we get the big pic of Wifi and its jargon, let's dive into *wpa_supplicant*.
 ***********
 Terminology
 -----------
 #### WEP 
- - Wireless Encryption Protocol
+ - Wired Encryption Protocol
  - Published in 1999
  - Replaced by WPA, TKIP
  - Old, flawed
@@ -47,6 +47,7 @@ Terminology
 
 #### WPA2
  -  Wi-Fi Protected Access II  
+ -  A.K.A. RSN (Robust Security Network)
  -  Published in 2004  
  -  Dominant method  
  -  WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP  

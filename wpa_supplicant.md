@@ -72,14 +72,27 @@ Terminology
  - An improvement of WEP
  - Replaced by CCMP
  - Published in 2002
- - 
+ - Can apply to old hard ware
 
 #### CCMP
+ - Counter Mode Cipher Block Chaining Message Authentication Code Protocol 
+ - An encryption way
+ - An improvement of TKIP
+ - Required new hard ware
+ - A.K.A. AES, AES-CCMP
 
 #### AES
+ -  Advanced Encryption Standard
+ -  CCMP is based on AES
 
 #### EAP
-
+ - Extensible Authentication Protocol 
+ - 
+ 
+#### SSID
+ - service set identifier
+ - BSSID: single ap
+ - ESSID: multi ap
 
 ******************
 Case study(94-test)

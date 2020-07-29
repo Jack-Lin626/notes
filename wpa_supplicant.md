@@ -213,6 +213,7 @@ network={
 | key_mgmt | WPA-PSK WPA-EAP IEEE8021X NONE | WPA-PSK WPA-EAP |
 | pairwise | CCMP TKIP | CCMP TKIP |
 | group | CCMP TKIP WEP104 WEP40 | CCMP TKIP WEP104 WEP40 |
+
 click [here](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html) for detail
 
 ##### Using wpa_cli

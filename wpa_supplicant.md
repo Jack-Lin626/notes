@@ -128,23 +128,23 @@ Case study(94-test)
 
 ### steps
 
-1. Connect to internet via ethernet
- -- Download tools `apt-get install wireless-tool`
-2. Make sure you get wpasupplicant
- -- `apt-get installl wpasupplicant`
-3. Enable wireless interface
- -- `rfkill unblock wifi`
-> It is optional, depends on your enviroment. But it may be the reason of failure.
-4. Use iwconfig 
- -- `iwconfig` find the port
-5. bring the wifi port up
- -- `ip link set [name] up` or `ifconfig [name] up`
-> In this case, you may get some error about the board. It's normal for this machine.
-6. Scan available wifi nearby
- -- `iwlist scan | grep ESSID`
-7. Create config file
- -- `vim /etc/wpa_supplicant/wpa_supplicant.conf`
-8. Finish the config file
+1. Connect to internet via ethernet    
+ -- Download tools `apt-get install wireless-tool`    
+2. Make sure you get wpasupplicant    
+ -- `apt-get installl wpasupplicant`    
+3. Enable wireless interface    
+ -- `rfkill unblock wifi`    
+> It is optional, depends on your enviroment. But it may be the reason of failure.    
+4. Use iwconfig     
+ -- `iwconfig` find the port    
+5. bring the wifi port up    
+ -- `ip link set [name] up` or `ifconfig [name] up`    
+> In this case, you may get some error about the board. It's normal for this machine.    
+6. Scan available wifi nearby    
+ -- `iwlist scan | grep ESSID`    
+7. Create config file    
+ -- `vim /etc/wpa_supplicant/wpa_supplicant.conf`    
+8. Finish the config file    
  ```txt
 ctrl_interface=DIR=/run/wpa_supplicant
 update_config=1
@@ -157,30 +157,30 @@ network={
     group=CCMP TKIP
     psk="12345678"
 }
- ```
-9. enable wpa_supplicant
- -- `wpa_supplicant -B -i [interface name] -c /etc/wpa_supplicant/wpa_supplicant.conf`
+ ```    
+9. enable wpa_supplicant    
+ -- `wpa_supplicant -B -i [interface name] -c /etc/wpa_supplicant/wpa_supplicant.conf`    
 > -B option runs the daemon in the background.    
 > -i option specifies the network interface to use.     
 > -c option specifies the configuration file to be used.    
-10. enter client console
- -- `wpa_cli -i [interface name]`
-> Occasionally the wpa_cli doesn't get the right one. It's better to specify the network interface here. Also, if sth gets wrong, this may be the reason of the problem. Click [here](https://superuser.com/questions/1468973/wpa-cli-choose-interface-p2p-dev-wlan0-automatically-when-i-is-not-specified) for detail.
-11. interacting with wpa with commands
- -- `scan`: remember to do it before everything
- -- `scan_results`: find your network
- -- `list_networks`: list the number of available networks
- -- `enable/disable_network [number]`
- -- `status`: for checking
- -- `add_netwotk`: also set ssid and password after this
- -- `select_network [number]`
- -- `terminate`: end the wpa_supplicant
- -- `q`: end wpa_cli
-12. disable existence ethernet
- -- `ip link set [port] down/up`
-> Bring down all the interface which is not related to WiFi, and bring up the WiFi interface at the same time.
-13. testing
- -- `ping google.com`
+10. enter client console    
+ -- `wpa_cli -i [interface name]`    
+> Occasionally the wpa_cli doesn't get the right one. It's better to specify the network interface here. Also, if sth gets wrong, this may be the reason of the problem. Click [here](https://superuser.com/questions/1468973/wpa-cli-choose-interface-p2p-dev-wlan0-automatically-when-i-is-not-specified) for detail.    
+11. interacting with wpa with commands    
+ -- `scan`: remember to do it before everything    
+ -- `scan_results`: find your network    
+ -- `list_networks`: list the number of available networks    
+ -- `enable/disable_network [number]`    
+ -- `status`: for checking    
+ -- `add_netwotk`: also set ssid and password after this    
+ -- `select_network [number]`    
+ -- `terminate`: end the wpa_supplicant    
+ -- `q`: end wpa_cli    
+12. disable existence ethernet    
+ -- `ip link set [port] down/up`    
+> Bring down all the interface which is not related to WiFi, and bring up the WiFi interface at the same time.    
+13. testing    
+ -- `ping google.com`    
 
 
 **************

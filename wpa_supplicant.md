@@ -186,8 +186,13 @@ network={
 **************
 Configure File
 --------------
+This file plays an important role in wpa_supplicant. In a nutshell, this file document how wpa_supplicant works and the information about networks. 
 
-
+Typically, this file need to be start with this. `/run/wpa_supplicant` can configure interface and connect to Wifi. You can set `GROUP=wheel` to any group you like, or ignore it. The file need to be created by root, placed under /etc/wpa_supplicant/, and named it anything ended with .conf. Then we need set `update_config` to 1 so that we can interate wpa_supplicant with wpa_cli.
+```text
+ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
+update_config=1
+```
 *********
 reference
 ---------

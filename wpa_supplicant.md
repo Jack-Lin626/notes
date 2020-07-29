@@ -6,13 +6,18 @@ Wpa_supplicant
 > 2. Case study(94-test) 
 > 2. Configs
 > 3. Commands 
-
+> 4. reference
 ********
 Overview
 --------
 
-- Wireless Fidelity is the measure of how accurate the signal is.
-- https://www.netspotapp.com/explaining-wifi-standards.html
+WiFi stands for *Wireless Fidelity*, which means how accurate the signal is. The abbreviation, WiFi, can have different flavors.
+ - How far can the wireless signal reach?
+ - How much data can the signal send?
+ - Is it backwards compatible with other standards?  
+
+As we can see, 
+
 
 *******************
 Case study(94-test)
@@ -73,4 +78,30 @@ $ sudo /etc/init.d/networking restart
 second: install wireless tool
 rfkill crucial````
 
+
+*********
+reference
+---------
+https://hostap.epitest.fi/wpa_supplicant/
+https://shapeshed.com/linux-wifi/
+http://blog.changyy.org/2013/04/wpacli.html
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant
+https://b8807053.pixnet.net/blog/post/35964202
+https://blog.xuite.net/tseng.jauming/baby/203326332-wpa_supplicant.conf範例設定
+https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html
 https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
+
+
+
+
+
+
+
+
+
+
+
+
+
+

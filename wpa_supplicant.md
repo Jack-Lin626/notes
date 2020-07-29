@@ -1,5 +1,5 @@
 Wpa_supplicant
-=======
+==============
 
 ### Contents
 > 1. Overview
@@ -7,19 +7,53 @@ Wpa_supplicant
 > 2. Configs
 > 3. Commands 
 > 4. reference
+
 ********
 Overview
 --------
-
 WiFi stands for *Wireless Fidelity*, which means how accurate the signal is. The abbreviation, WiFi, can have different flavors.
  - How far can the wireless signal reach?
  - How much data can the signal send?
  - Is it backwards compatible with other standards?  
 
-As we can see, 
+WPA_SUPP
+
+***********
+Terminology
+-----------
+#### WEP 
+ - Wireless Encryption Protocol
+ - Established in 1999
+ - Replaced by WPA
+ - Old, flawed
+
+#### WPA
+ -  Wi-Fi Protected Access
+ -  Established in 2003
+ -  Replaced by WPA2
+ -  WPA = IEEE 802.11i draft 3 = IEEE 802.1X/EAP + WEP/TKIP
+ 
+#### WPA2
+ - Wi-Fi Protected Access II 
+ - Established in 2004
+ - Dominant method nowadays, 
+ - WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP 
+
+ 
+#### WAP3
+ - Wi-Fi Protected Access III 
+ - Announced in 2018
+
+#### TKIP
+
+#### CCMP
+
+#### AES
+
+#### EAP
 
 
-*******************
+******************
 Case study(94-test)
 -------------------
 
@@ -57,6 +91,7 @@ network={
  -- `wpa_cli -i [port name]`
  -- Sometimes the wpa_cli will not get the right one. It's better to specify the info here. Also, if sth gets wrong, this may be the reason of the problem.
 10. interacting with wpa with commands
+ -- `scan`
  -- `status`
  -- `list_networks` 
  -- `enable/disable_network [number]`
@@ -91,7 +126,8 @@ https://b8807053.pixnet.net/blog/post/35964202
 https://blog.xuite.net/tseng.jauming/baby/203326332-wpa_supplicant.conf範例設定
 https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html
 https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
-
+http://simple-is-beauty.blogspot.com/2017/10/wifi-directwi-fi-p2p.html
+https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare
 
 
 

@@ -3,6 +3,7 @@ Wpa_supplicant
 
 ### Contents
 > 1. Overview
+> 2. Terminology
 > 2. Case study(94-test) 
 > 2. Configs
 > 3. Commands 
@@ -23,7 +24,6 @@ After we get the big pic of Wifi and its jargon, let's dive into *wpa_supplicant
 Usually, wpa_supplicant works likely as a daemon program, and runs in the background continuously. Due to this characteristic, it has its own PID. It is crucial to kill the old PID when we want to launch a new one. Basically,using `ps aux | grep wpa && kill [PID]`. In addirion to wpa_supplicant, we can use *wpa_cli* or *wpa-gui* for a frontend programs. Before we want to start wpa_cli, we need to check our wireless interfaces and set our  configuration file.
 
 Click [here](https://hostap.epitest.fi/wpa_supplicant/) for detail.
-
 
 ***********
 Terminology
@@ -49,7 +49,6 @@ Terminology
  -- Used for individual  
  -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP  
  -- More vulnerable, but convenient  
-
 
 #### WPA2
  -  Wi-Fi Protected Access II  
@@ -86,7 +85,7 @@ Terminology
  - Counter Mode Cipher Block Chaining Message Authentication Code Protocol 
  - An encryption way
  - An improvement of TKIP
- - Required new hard ware
+ - Required new hard ware support
  - A.K.A. AES, AES-CCMP
 
 #### AES
@@ -95,32 +94,57 @@ Terminology
 
 #### EAP
  - Extensible Authentication Protocol 
- - 
+ - (compare to IEEE?)
  
 #### SSID
  - service set identifier
  - BSSID: single ap
  - ESSID: multi ap
 
+#### WPS
+ - Wi-Fi Protected Setup
+ - Easy to use for setup your WiFi
+
+#### other
+ - WPA and WPA2 have the same **mechanism and standard**, IEEE 802.1X/EAP, but using different **encryption**, TKIP or CCMP
+ - *CCMP>TKIP>WEP*: These are all encryption methods.
+
+#### example
+```text
+> wpa_cli
+> scan
+> scan_results
+bssid / frequency / signal level/ flags / ssid
+XX:XX:XX:XX:XX:XX    5240    -41    [WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS][WPS]    94-test-5GHz
+XX:XX:XX:XX:XX:XX    5240    -41    [WPA2-EAP-CCMP][ESS][WPS]    .M-Mobile
+```
+ - 94-test-5GHz: WPA2 and WPA personal encrypted by CCMP+TKIP and providing multi ap and wps
+ - .M-Mobile: WPA2 enterprise encrypted by CCMP and providing multi ap and wps
+
+
 ******************
 Case study(94-test)
 -------------------
 
-steps
------
-1. connect to internet via ethernet
+### steps
+
+1. Connect to internet via ethernet
  -- Download tools `apt-get install wireless-tool`
-2. make sure you get wpasupplicant
+2. Make sure you get wpasupplicant
  -- `apt-get installl wpasupplicant`
-3. using iwconfig 
+3. Enable wireless interface
+ -- `rfkill unblock wifi`
+> It is optional, depends on your enviroment. But it may be the reason of failure.
+4. Use iwconfig 
  -- `iwconfig` find the port
-4. bring the wifi port up
+5. bring the wifi port up
  -- `ip link set [name] up` or `ifconfig [name] up`
-5. scan available wifi nearby
+> In this case, you may get some error about the board. It's normal for this machine.
+6. Scan available wifi nearby
  -- `iwlist scan | grep ESSID`
-6. Creating config file
+7. Create config file
  -- `vim /etc/wpa_supplicant/wpa_supplicant.conf`
-7. finish the config file
+8. Finish the config file
  ```txt
 ctrl_interface=DIR=/run/wpa_supplicant
 update_config=1
@@ -134,33 +158,34 @@ network={
     psk="12345678"
 }
  ```
-8. enable wpa_supplicant
- -- `wpa_supplicant -B -i [port name] -c /etc/wpa_supplicant/wpa_supplicant.conf`
-9. enter client console
- -- `wpa_cli -i [port name]`
- -- Sometimes the wpa_cli will not get the right one. It's better to specify the info here. Also, if sth gets wrong, this may be the reason of the problem.
-10. interacting with wpa with commands
- -- `scan`
- -- `status`
- -- `list_networks` 
+9. enable wpa_supplicant
+ -- `wpa_supplicant -B -i [interface name] -c /etc/wpa_supplicant/wpa_supplicant.conf`
+> -B option runs the daemon in the background.    
+> -i option specifies the network interface to use.     
+> -c option specifies the configuration file to be used.    
+10. enter client console
+ -- `wpa_cli -i [interface name]`
+> Occasionally the wpa_cli doesn't get the right one. It's better to specify the network interface here. Also, if sth gets wrong, this may be the reason of the problem. Click [here](https://superuser.com/questions/1468973/wpa-cli-choose-interface-p2p-dev-wlan0-automatically-when-i-is-not-specified) for detail.
+11. interacting with wpa with commands
+ -- `scan`: remember to do it before everything
+ -- `scan_results`: find your network
+ -- `list_networks`: list the number of available networks
  -- `enable/disable_network [number]`
- -- `scan_results`
+ -- `status`: for checking
+ -- `add_netwotk`: also set ssid and password after this
  -- `select_network [number]`
- -- `add_netwotk`
-11. disable existence ethernet
- -- `ip link set [port] down`
-12. testing
+ -- `terminate`: end the wpa_supplicant
+ -- `q`: end wpa_cli
+12. disable existence ethernet
+ -- `ip link set [port] down/up`
+> Bring down all the interface which is not related to WiFi, and bring up the WiFi interface at the same time.
+13. testing
  -- `ping google.com`
 
-see $ sudo vi /etc/network/interfaces
-$ sudo /etc/init.d/networking restart
 
-
-
-
-
-second: install wireless tool
-rfkill crucial````
+**************
+Configure File
+--------------
 
 
 *********

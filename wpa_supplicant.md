@@ -23,28 +23,56 @@ Terminology
 -----------
 #### WEP 
  - Wireless Encryption Protocol
- - Established in 1999
- - Replaced by WPA
+ - Published in 1999
+ - Replaced by WPA, TKIP
  - Old, flawed
 
 #### WPA
  -  Wi-Fi Protected Access
- -  Established in 2003
+ -  Published in 2003
  -  Replaced by WPA2
  -  WPA = IEEE 802.11i draft 3 = IEEE 802.1X/EAP + WEP/TKIP
- 
-#### WPA2
- - Wi-Fi Protected Access II 
- - Established in 2004
- - Dominant method nowadays, 
- - WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP 
+ -  WPA Enterprise
+ -- A.K.A. WPA-EAP
+ -- Used in enterprise
+ -- Using **IEEE 802.1X/EAP**
+ -- Requires a Radius server
+  - WPA Personal
+ -- A.K.A. WPA-PSK
+ -- Used for individual
+ -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP
+ -- More vulnerable, but convenient
 
- 
+
+#### WPA2
+ -  Wi-Fi Protected Access II 
+ -  Published in 2004
+ -  Dominant method
+ -  WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP 
+ -  WPA2 Enterprise
+ -- A.K.A. WPA2-EAP
+ -- Used in enterprise
+ -- Using **IEEE 802.1X/EAP**
+ -- Requires a Radius server
+  - WPA2 Personal
+ -- A.K.A. WPA2-PSK
+ -- Used for individual
+ -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP
+ -- More vulnerable, but convenient
+
+
+
 #### WAP3
  - Wi-Fi Protected Access III 
  - Announced in 2018
 
 #### TKIP
+ - Temporal Key Integrity Protocol
+ - An encryption way
+ - An improvement of WEP
+ - Replaced by CCMP
+ - Published in 2002
+ - 
 
 #### CCMP
 
@@ -128,6 +156,7 @@ https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html
 https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
 http://simple-is-beauty.blogspot.com/2017/10/wifi-directwi-fi-p2p.html
 https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare
+https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/
 
 
 

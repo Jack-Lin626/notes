@@ -16,7 +16,8 @@ WiFi stands for *Wireless Fidelity*, which means how accurate the signal is. The
  - How much data can the signal send?
  - Is it backwards compatible with other standards?  
 
-WPA_SUPP
+In the world of Wireless communication, we need a standard to regulate and unify how to communicate. Similar to power outlet, we need to have a consensus about it so that we can plug in different kinds of electrical appliances. Therefore, **IEEE 802.1X** becomes the standard protocol when it comes to WiFi.
+
 
 ***********
 Terminology

@@ -32,33 +32,33 @@ Terminology
  -  Published in 2003
  -  Replaced by WPA2
  -  WPA = IEEE 802.11i draft 3 = IEEE 802.1X/EAP + WEP/TKIP
- -  WPA Enterprise
- -- A.K.A. WPA-EAP
- -- Used in enterprise
- -- Using **IEEE 802.1X/EAP**
- -- Requires a Radius server
-  - WPA Personal
- -- A.K.A. WPA-PSK
- -- Used for individual
- -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP
- -- More vulnerable, but convenient
+ -  WPA Enterprise  
+ -- A.K.A. WPA-EAP  
+ -- Used in enterprise  
+ -- Using **IEEE 802.1X/EAP**  
+ -- Requires a Radius server  
+  - WPA Personal  
+ -- A.K.A. WPA-PSK  
+ -- Used for individual  
+ -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP  
+ -- More vulnerable, but convenient  
 
 
 #### WPA2
- -  Wi-Fi Protected Access II 
- -  Published in 2004
- -  Dominant method
- -  WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP 
- -  WPA2 Enterprise
- -- A.K.A. WPA2-EAP
- -- Used in enterprise
- -- Using **IEEE 802.1X/EAP**
- -- Requires a Radius server
-  - WPA2 Personal
- -- A.K.A. WPA2-PSK
- -- Used for individual
- -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP
- -- More vulnerable, but convenient
+ -  Wi-Fi Protected Access II  
+ -  Published in 2004  
+ -  Dominant method  
+ -  WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP/TKIP/CCMP  
+ -  WPA2 Enterprise  
+ -- A.K.A. WPA2-EAP  
+ -- Used in enterprise  
+ -- Using **IEEE 802.1X/EAP**  
+ -- Requires a Radius server  
+  - WPA2 Personal  
+ -- A.K.A. WPA2-PSK  
+ -- Used for individual  
+ -- Using **Pre-Share-Key** instead of IEEE 802.1X/EAP  
+ -- More vulnerable, but convenient  
 
 
 

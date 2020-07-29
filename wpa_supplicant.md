@@ -188,11 +188,44 @@ Configure File
 --------------
 This file plays an important role in wpa_supplicant. In a nutshell, this file document how wpa_supplicant works and the information about networks. 
 
-Typically, this file need to be start with this. `/run/wpa_supplicant` can configure interface and connect to Wifi. You can set `GROUP=wheel` to any group you like, or ignore it. The file need to be created by root, placed under /etc/wpa_supplicant/, and named it anything ended with .conf. Then we need set `update_config` to 1 so that we can interate wpa_supplicant with wpa_cli.
+Typically, this file need to be start with this.    
 ```text
 ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
 update_config=1
 ```
+`/run/wpa_supplicant` can configure interface and connect to Wifi. You can set `GROUP=wheel` to any group you like, or ignore it. The file need to be created by root, placed under /etc/wpa_supplicant/, and named it anything ended with .conf. Then we need set `update_config` to 1 so that we can interate wpa_supplicant with wpa_cli.
+
+Then, the network part. You have three ways to finish this part. The first one is editting the config file directly. The second choice is using wpa_cli. The third one is using `wpa_passphrase`
+
+##### Editting configure file  
+syntax:
+```text
+network={
+    name1=description_1 description_2
+    name=description_1 description_2
+}
+```
+| variables | options | not set for default |
+| ---- | ------- | ------------------- |
+| ssid | "name of network"   | required |
+| psk  | "password" | required |
+| proto | WPA RSN | WPA RSN |
+| key_mgmt | WPA-PSK WPA-EAP IEEE8021X NONE | WPA-PSK WPA-EAP |
+| pairwise | CCMP TKIP | CCMP TKIP |
+| group | CCMP TKIP WEP104 WEP40 | CCMP TKIP WEP104 WEP40 |
+click [here](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html) for detail
+
+##### Using wpa_cli
+```text
+> wpa_cli
+> set_network [variables]
+> save config
+```
+
+##### Using passphass
+`wpa_passphrase your-ESSID your-passphrase | sudo tee /etc/wpa_supplicant.conf`
+
+
 *********
 reference
 ---------

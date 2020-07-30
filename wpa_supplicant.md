@@ -266,9 +266,10 @@ reference
 [how to set up](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant)    
 [how to set up](https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster)    
 [useful commands](http://blog.changyy.org/2013/04/wpacli.html)    
-https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 [config](https://b8807053.pixnet.net/blog/post/35964202)    
 [config](https://blog.xuite.net/tseng.jauming/baby/203326332-wpa_supplicant.conf範例設定)    
 [config_official document](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html)    
-[WPA_PSK](https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare)    
-[WPA-PSK, TKIP](https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/)    
+[WiFi](https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare)    
+[WiFi](https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/)   
+[WiFi](https://www.netspotapp.com/explaining-wifi-standards.html)
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md

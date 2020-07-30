@@ -124,8 +124,7 @@ XX:XX:XX:XX:XX:XX    5240    -41    [WPA2-EAP-CCMP][ESS][WPS]    .M-Mobile
 *******************
 Case study(94-test)
 -------------------
-In this practice, I use 94-test-5GHz, which is one of APs in office. The AP is WPA/WPA2-PSK with CCMP+TKIP. We can get this information by using wpa_supplicant.
-
+In this practice, I use 94-test-5GHz, which is one of APs in our office. The AP is WPA/WPA2-PSK with CCMP+TKIP. We can get this information by using wpa_cli.
 
 ### steps
 1. Connect to internet via ethernet and get essential tools
@@ -374,8 +373,6 @@ network id / ssid / bssid / flags
 0       94-test-5GHz    any     [CURRENT]
 > add_network
 1
-> set_network 1 ssid 94-test
-FAIL
 > set_network 1 ssid "94-test"
 OK
 > set_network 1 psk "12345678"
@@ -390,8 +387,6 @@ OK
 network id / ssid / bssid / flags
 0       94-test-5GHz    any     [CURRENT]
 1       94-test any
-> se
-select_network  set             set_cred        set_network
 > select_network 1
 OK
 <3>CTRL-EVENT-DISCONNECTED bssid=74:da:da:35:72:6e reason=3 locally_generated=1

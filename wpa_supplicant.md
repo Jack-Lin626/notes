@@ -4,10 +4,10 @@ Wpa_supplicant
 ### Contents
 > 1. Overview
 > 2. Terminology
-> 2. Case study(94-test) 
-> 2. Configure File
-> 3. Useful Commands 
-> 4. reference
+> 3. Case study(94-test) 
+> 4. Configure File
+> 5. Useful Commands 
+> 6. Reference
 
 ********
 Overview
@@ -261,19 +261,14 @@ Useful Commands
 *********
 reference
 ---------
-https://hostap.epitest.fi/wpa_supplicant/
-https://shapeshed.com/linux-wifi/
-http://blog.changyy.org/2013/04/wpacli.html
+[wpa_supplicant document](https://hostap.epitest.fi/wpa_supplicant/)
+[how to set up]( https://shapeshed.com/linux-wifi/)
+[how to set up](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant)
+[how to set up](https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster)
+[useful commands](http://blog.changyy.org/2013/04/wpacli.html)
 https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
-https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant
-https://b8807053.pixnet.net/blog/post/35964202
-https://blog.xuite.net/tseng.jauming/baby/203326332-wpa_supplicant.conf範例設定
-https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html
-https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
-http://simple-is-beauty.blogspot.com/2017/10/wifi-directwi-fi-p2p.html
-https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare
-https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/
-
-
-
-
+[config](https://b8807053.pixnet.net/blog/post/35964202)
+[config](https://blog.xuite.net/tseng.jauming/baby/203326332-wpa_supplicant.conf範例設定)
+[config_official document](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html)
+[WPA_PSK](https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare)
+[WPA-PSK, TKIP](https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/)

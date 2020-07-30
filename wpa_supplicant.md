@@ -1,7 +1,7 @@
 Wpa_supplicant
 ==============
 
-## Table of Contents
+### Table of Contents
 > 1. Overview
 > 2. Terminology
 > 3. Case study(94-test) 

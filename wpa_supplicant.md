@@ -121,9 +121,12 @@ XX:XX:XX:XX:XX:XX    5240    -41    [WPA2-EAP-CCMP][ESS][WPS]    .M-Mobile
  - .M-Mobile: WPA2 enterprise encrypted by CCMP and providing multi ap and wps
 
 
-******************
+*******************
 Case study(94-test)
 -------------------
+In this practice, I use 94-test-5GHz, which is one of APs in office. The AP is WPA/WPA2-PSK with CCMP+TKIP. 
+
+
 ### steps
 1. Connect to internet via ethernet    
  -- Download tools `apt-get install wireless-tool`    

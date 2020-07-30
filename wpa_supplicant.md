@@ -127,7 +127,7 @@ Case study(94-test)
 In this practice, I use 94-test-5GHz, which is one of APs in our office. The AP is WPA/WPA2-PSK with CCMP+TKIP. We can get this information by using wpa_cli.
 
 ### steps
-1. Connect to internet via ethernet and get essential tools
+1. Connect to internet via ethernet and get essential tools    
  -- Download tools `apt-get install wireless-tools`    
 ```text
 root@Moxa:~# apt-get install wireless-tools

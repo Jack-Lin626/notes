@@ -243,7 +243,7 @@ Useful Commands
 ###### wpa_supplicant:
 > `wpa_supplicant -B -i [interface name] -c /etc/wpa_supplicant/wpa_supplicant.conf`
 ###### wpa_cli:
-> `wpa_cli -i [interface name]`
+> `wpa_cli -i [interface name]`     
 > `scan` `scan_result` `enable/disable_network` `list_network` `sellect_network` `terminate` `q` `add_network` `set_network`
 
 

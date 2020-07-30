@@ -200,7 +200,7 @@ update_config=1
 
 Then, for the network part. You have three ways to finish this part. The first one is editting the config file directly. The second choice is using wpa_cli. The third one is using `wpa_passphrase`
 
-##### Editting configure file  
+##### Editting configure file:
 This is the most direct way to achieve our goal.
 syntax:
 ```text
@@ -220,7 +220,7 @@ network={
 
 
 
-##### Using wpa_cli
+##### Using wpa_cli:
 After adding and setting the network, wpa_cli will suto save to config file.
 ```text
 > wpa_cli
@@ -228,7 +228,7 @@ After adding and setting the network, wpa_cli will suto save to config file.
 > save config
 ```
 
-##### Using passphass
+##### Using passphass:
 This method is used to add the network which don't need to add additional variables except network name and password. Simply put, letting default for the rest variables. Passphrase can generate a set of password which is more confidential.
 `wpa_passphrase your-ESSID your-passphrase | sudo tee /etc/wpa_supplicant.conf`
 

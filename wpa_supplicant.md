@@ -5,8 +5,8 @@ Wpa_supplicant
 > 1. Overview
 > 2. Terminology
 > 2. Case study(94-test) 
-> 2. Configs
-> 3. Commands 
+> 2. Configure File
+> 3. Useful Commands 
 > 4. reference
 
 ********
@@ -94,6 +94,7 @@ Terminology
 
 #### EAP
  - Extensible Authentication Protocol 
+ - It's an extension protocol of IEEE802.1x
  - (compare to IEEE?)
  
 #### SSID
@@ -166,7 +167,7 @@ network={
 10. enter client console    
  -- `wpa_cli -i [interface name]`    
 > Occasionally the wpa_cli doesn't get the right one. It's better to specify the network interface here. Also, if sth gets wrong, this may be the reason of the problem. Click [here](https://superuser.com/questions/1468973/wpa-cli-choose-interface-p2p-dev-wlan0-automatically-when-i-is-not-specified) for detail.    
-11. interacting with wpa with commands    
+11. interacting with wpa_supplicant with commands    
  -- `scan`: remember to do it before everything    
  -- `scan_results`: find your network    
  -- `list_networks`: list the number of available networks    
@@ -186,7 +187,9 @@ network={
 **************
 Configure File
 --------------
-This file plays an important role in wpa_supplicant. In a nutshell, this file document how wpa_supplicant works and the information about networks. 
+This file plays an important role in wpa_supplicant. In a nutshell, this file document how wpa_supplicant works and the information about networks. In detail, it contains following information: **network name and password**, **protocol**, **encryption method**, **hidden network information**, and **priority**.
+
+click [here](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html) for detail
 
 Typically, this file need to be start with this.    
 ```text
@@ -195,14 +198,15 @@ update_config=1
 ```
 `/run/wpa_supplicant` can configure interface and connect to Wifi. You can set `GROUP=wheel` to any group you like, or ignore it. The file need to be created by root, placed under /etc/wpa_supplicant/, and named it anything ended with .conf. Then we need set `update_config` to 1 so that we can interate wpa_supplicant with wpa_cli.
 
-Then, the network part. You have three ways to finish this part. The first one is editting the config file directly. The second choice is using wpa_cli. The third one is using `wpa_passphrase`
+Then, for the network part. You have three ways to finish this part. The first one is editting the config file directly. The second choice is using wpa_cli. The third one is using `wpa_passphrase`
 
 ##### Editting configure file  
+This is the most direct way to achieve our goal.
 syntax:
 ```text
 network={
-    name1=description_1 description_2
-    name=description_1 description_2
+    variable1=description_1 description_2
+    variable2=description_1 description_2
 }
 ```
 | variables | options | not set for default |
@@ -214,9 +218,10 @@ network={
 | pairwise | CCMP TKIP | CCMP TKIP |
 | group | CCMP TKIP WEP104 WEP40 | CCMP TKIP WEP104 WEP40 |
 
-click [here](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html) for detail
+
 
 ##### Using wpa_cli
+After adding and setting the network, wpa_cli will suto save to config file.
 ```text
 > wpa_cli
 > set_network [variables]
@@ -224,7 +229,33 @@ click [here](https://www.daemon-systems.org/man/wpa_supplicant.conf.5.html) for 
 ```
 
 ##### Using passphass
+This method is used to add the network which don't need to add additional variables except network name and password. Simply put, letting default for the rest variables. Passphrase can generate a set of password which is more confidential.
 `wpa_passphrase your-ESSID your-passphrase | sudo tee /etc/wpa_supplicant.conf`
+
+
+***************
+Useful Commands
+---------------
+###### General:
+> `ps aux | grep wpa && kill [PID]`    
+> `apt-get install wireless-tool`    
+> `apt-get installl wpasupplicant`    
+> `rfkill unblock wifi`    
+> `vim /etc/wpa_supplicant/wpa_supplicant.conf`    
+> `ping google.com`
+
+###### Interfaces and Network
+> `iwconfig`    
+> `ifconfig`    
+> `ip link set [name] up/down` or `ifconfig [name] up/down`    
+> `iwlist scan | grep ESSID`    
+
+###### wpa_supplicant
+> `wpa_supplicant -B -i [interface name] -c /etc/wpa_supplicant/wpa_supplicant.conf`
+
+###### wpa_cli
+> `wpa_cli -i [interface name]`
+> `scan` `scan_result` `enable/disable_network` `list_network` `sellect_network` `terminate` `q` `add_network` `set_network`
 
 
 *********
@@ -242,16 +273,6 @@ https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
 http://simple-is-beauty.blogspot.com/2017/10/wifi-directwi-fi-p2p.html
 https://blog.csdn.net/a407603406/article/details/21343009?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare
 https://www.howtogeek.com/204697/wi-fi-security-should-you-use-wpa2-aes-wpa2-tkip-or-both/
-
-
-
-
-
-
-
-
-
-
 
 
 

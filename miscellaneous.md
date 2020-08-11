@@ -30,3 +30,29 @@ Contents
 3. bring the internet up
  -- `inconfig [name] up`
  -- `ip linkset [name] up/down`
+
+
+local apt repo
+https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository
+sudo apt-get install dpkg-dev
+sudo mkdir -p /usr/local/mydebs
+
+#! /bin/bash
+ cd /usr/local/mydebs
+ dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+ (write in chmod u+x ~/bin/update-mydebs
+ 
+ Sources.list
+
+add the line
+
+deb file:/usr/local/mydebs ./
+
+)
+
+sudo update-mydebs
+sudo apt-get update
+
+https://wiki.debian.org/MaintainerScripts
+
+

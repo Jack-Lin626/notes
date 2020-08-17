@@ -32,7 +32,7 @@ Contents
  -- `inconfig [name] up`    
  -- `ip linkset [name] up/down`    
 
-# local apt wserver
+# local apt server
 
 ## big pic
  - contrary to apt server in remote    

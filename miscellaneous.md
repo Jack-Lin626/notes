@@ -82,8 +82,8 @@ https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository
 
 
 # GIT
-the purpose of git command
-:
-to cut a useful version point
-every commit should be specific
+the purpose of git command    
+:    
+to cut a useful version point   
+every commit should be specific     
 

@@ -2,7 +2,8 @@ Contents
 ========
 
 > internet setting
-
+> local apt server
+> GIT
 --------
 
 # internet setting
@@ -31,28 +32,59 @@ Contents
  -- `inconfig [name] up`
  -- `ip linkset [name] up/down`
 
+# local apt wserver
+
+## big pic
+ - contrary to apt server in remote
+## STEPS: preset
+
+Set up internet when we use a plain machine
+`ip addr add 10.144.54.134/22 dev eth0`
+`ip route add default via 10.144.55.254 dev eth0`
+
+Update 
+`apt-get update`
+
 
 local apt repo
 https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository
-sudo apt-get install dpkg-dev
-sudo mkdir -p /usr/local/mydebs
 
+install crucial tool
+`sudo apt-get install dpkg-dev`
+
+create local repository folder
+`sudo mkdir -p /usr/local/mydebs`
+
+create local update mechanism
+mkdir -p ~/bin/
+vim ~/bin/update-mydebs
+```vim
 #! /bin/bash
  cd /usr/local/mydebs
  dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
- (write in chmod u+x ~/bin/update-mydebs
- 
- Sources.list
+ ```
+ chmod u+x ~/bin/update-mydebs
+ `vim /etc/apt/sources.list`
+ add
+ `deb file:/usr/local/mydebs ./`
 
-add the line
+## STEPS: move file
 
-deb file:/usr/local/mydebs ./
+move application to local repo
+`mv /tmp/uc2100-base-system_1.5.2_armhf.deb /usr/local/mydebs/`
 
-)
+## STEPS: start
+`~/bin/update-mydebs`
+`sudo apt-get update`
+`apt-get install uc2100-base-system`
 
-sudo update-mydebs
-sudo apt-get update
-
+## reference
 https://wiki.debian.org/MaintainerScripts
 
+
+# GIT
+the purpose of git command
+:
+to cut a useful version point
+every commit should be specific
 

@@ -87,3 +87,5 @@ the purpose of git command
 to cut a useful version point   
 every commit should be specific     
 
+
+https://lists.debian.org/debian-mentors/1998/04/msg00029.html

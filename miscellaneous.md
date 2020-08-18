@@ -48,10 +48,10 @@ Update
 
 
 install crucial tool    
-`sudo apt-get install dpkg-dev`    
+`apt-get install dpkg-dev`    
 
 create local repository folder    
-`sudo mkdir -p /usr/local/mydebs`    
+`mkdir -p /usr/local/mydebs`    
 
 create local update mechanism    
 `mkdir -p ~/bin/`    
@@ -73,7 +73,7 @@ move application to local repo
 
 ## STEPS: start    
 `~/bin/update-mydebs`    
-`sudo apt-get update`    
+`apt-get update`    
 `apt-get install uc2100-base-system`    
   
 ## reference    

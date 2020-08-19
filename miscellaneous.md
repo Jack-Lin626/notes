@@ -89,3 +89,4 @@ every commit should be specific
 
 
 https://lists.debian.org/debian-mentors/1998/04/msg00029.html
+https://medium.com/swlh/introduction-to-debian-maintainer-script-flow-charts-6f76423b80d9
